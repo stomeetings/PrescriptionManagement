@@ -1,0 +1,28 @@
+using System.Data;
+using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Prescription.Application.Repositories;
+using Prescription.Infrastructure.Repositories;
+
+namespace Prescription.Infrastructure;
+
+public static class DependencyInjection
+{
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddScoped<IDbConnection>(_ =>
+            new SqlConnection(configuration.GetConnectionString("PrescriptionManagement")));
+
+        services.AddScoped<IGenderRepository, GenderRepository>();
+        services.AddScoped<IPrescriptionStatusRepository, PrescriptionStatusRepository>();
+        services.AddScoped<IMedicineFormRepository, MedicineFormRepository>();
+        services.AddScoped<IMedicineRouteRepository, MedicineRouteRepository>();
+        services.AddScoped<IDoseUnitRepository, DoseUnitRepository>();
+        services.AddScoped<IFrequencyRepository, FrequencyRepository>();
+        services.AddScoped<IDurationUnitRepository, DurationUnitRepository>();
+        services.AddScoped<IProfileTypeRepository, ProfileTypeRepository>();
+
+        return services;
+    }
+}
