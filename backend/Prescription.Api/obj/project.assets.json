@@ -1,0 +1,178 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Prescription.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Prescription.Domain": "1.0.0",
+          "Prescription.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Prescription.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Prescription.Application.dll": {}
+        }
+      },
+      "Prescription.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Prescription.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Prescription.Domain.dll": {}
+        }
+      },
+      "Prescription.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Prescription.Application": "1.0.0",
+          "Prescription.Domain": "1.0.0",
+          "Prescription.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Prescription.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Prescription.Infrastructure.dll": {}
+        }
+      },
+      "Prescription.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Prescription.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Prescription.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Prescription.Application/1.0.0": {
+      "type": "project",
+      "path": "../Prescription.Application/Prescription.Application.csproj",
+      "msbuildProject": "../Prescription.Application/Prescription.Application.csproj"
+    },
+    "Prescription.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Prescription.Domain/Prescription.Domain.csproj",
+      "msbuildProject": "../Prescription.Domain/Prescription.Domain.csproj"
+    },
+    "Prescription.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Prescription.Infrastructure/Prescription.Infrastructure.csproj",
+      "msbuildProject": "../Prescription.Infrastructure/Prescription.Infrastructure.csproj"
+    },
+    "Prescription.Shared/1.0.0": {
+      "type": "project",
+      "path": "../Prescription.Shared/Prescription.Shared.csproj",
+      "msbuildProject": "../Prescription.Shared/Prescription.Shared.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Prescription.Application >= 1.0.0",
+      "Prescription.Infrastructure >= 1.0.0",
+      "Prescription.Shared >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\92309\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Api\\Prescription.Api.csproj",
+      "projectName": "Prescription.Api",
+      "projectPath": "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Api\\Prescription.Api.csproj",
+      "packagesPath": "C:\\Users\\92309\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Api\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\92309\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Application\\Prescription.Application.csproj": {
+              "projectPath": "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Application\\Prescription.Application.csproj"
+            },
+            "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Infrastructure\\Prescription.Infrastructure.csproj": {
+              "projectPath": "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Infrastructure\\Prescription.Infrastructure.csproj"
+            },
+            "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Shared\\Prescription.Shared.csproj": {
+              "projectPath": "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Shared\\Prescription.Shared.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.100"
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

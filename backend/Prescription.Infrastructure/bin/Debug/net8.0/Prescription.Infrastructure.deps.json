@@ -1,0 +1,71 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Prescription.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Prescription.Application": "1.0.0",
+          "Prescription.Domain": "1.0.0",
+          "Prescription.Shared": "1.0.0"
+        },
+        "runtime": {
+          "Prescription.Infrastructure.dll": {}
+        }
+      },
+      "Prescription.Application/1.0.0": {
+        "dependencies": {
+          "Prescription.Domain": "1.0.0",
+          "Prescription.Shared": "1.0.0"
+        },
+        "runtime": {
+          "Prescription.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Prescription.Domain/1.0.0": {
+        "runtime": {
+          "Prescription.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Prescription.Shared/1.0.0": {
+        "runtime": {
+          "Prescription.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Prescription.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Prescription.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Prescription.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Prescription.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

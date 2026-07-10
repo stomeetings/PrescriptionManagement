@@ -1,0 +1,12 @@
+C:\Projects\PrescriptionManagement\backend\Prescription.Shared\bin\Debug\net8.0\Prescription.Shared.deps.json
+C:\Projects\PrescriptionManagement\backend\Prescription.Shared\bin\Debug\net8.0\Prescription.Shared.dll
+C:\Projects\PrescriptionManagement\backend\Prescription.Shared\bin\Debug\net8.0\Prescription.Shared.pdb
+C:\Projects\PrescriptionManagement\backend\Prescription.Shared\obj\Debug\net8.0\Prescription.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\PrescriptionManagement\backend\Prescription.Shared\obj\Debug\net8.0\Prescription.Shared.AssemblyInfoInputs.cache
+C:\Projects\PrescriptionManagement\backend\Prescription.Shared\obj\Debug\net8.0\Prescription.Shared.AssemblyInfo.cs
+C:\Projects\PrescriptionManagement\backend\Prescription.Shared\obj\Debug\net8.0\Prescription.Shared.csproj.CoreCompileInputs.cache
+C:\Projects\PrescriptionManagement\backend\Prescription.Shared\obj\Debug\net8.0\Prescription.Shared.sourcelink.json
+C:\Projects\PrescriptionManagement\backend\Prescription.Shared\obj\Debug\net8.0\Prescription.Shared.dll
+C:\Projects\PrescriptionManagement\backend\Prescription.Shared\obj\Debug\net8.0\refint\Prescription.Shared.dll
+C:\Projects\PrescriptionManagement\backend\Prescription.Shared\obj\Debug\net8.0\Prescription.Shared.pdb
+C:\Projects\PrescriptionManagement\backend\Prescription.Shared\obj\Debug\net8.0\ref\Prescription.Shared.dll

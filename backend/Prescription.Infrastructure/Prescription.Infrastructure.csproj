@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Prescription.Domain\Prescription.Domain.csproj" />
+    <ProjectReference Include="..\Prescription.Application\Prescription.Application.csproj" />
+    <ProjectReference Include="..\Prescription.Shared\Prescription.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
