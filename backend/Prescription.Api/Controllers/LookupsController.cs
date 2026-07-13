@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Prescription.Application.Mapping;
 using Prescription.Application.Services;
@@ -8,9 +9,10 @@ namespace Prescription.Api.Controllers;
 /// <summary>
 /// Provides read-only access to lookup reference data (dropdown/reference values) used across the application.
 /// </summary>
-// [Authorize] intentionally omitted for now — no JWT authentication scheme is configured yet
-// (that's the separate Authentication module). Re-add once it exists, per api-spec.md's auth requirement.
+// Requires any authenticated user, no role restriction: every role (Administrator, Doctor,
+// Pharmacist, Receptionist) needs reference/dropdown data to fill out forms in other modules.
 [ApiController]
+[Authorize]
 [Route("api/lookups")]
 public class LookupsController : ControllerBase
 {

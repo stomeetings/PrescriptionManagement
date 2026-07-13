@@ -3,7 +3,9 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Prescription.Application.Repositories;
+using Prescription.Application.Security;
 using Prescription.Infrastructure.Repositories;
+using Prescription.Infrastructure.Security;
 
 namespace Prescription.Infrastructure;
 
@@ -22,6 +24,10 @@ public static class DependencyInjection
         services.AddScoped<IFrequencyRepository, FrequencyRepository>();
         services.AddScoped<IDurationUnitRepository, DurationUnitRepository>();
         services.AddScoped<IProfileTypeRepository, ProfileTypeRepository>();
+        services.AddScoped<IUserAccountRepository, UserAccountRepository>();
+
+        services.Configure<JwtOptions>(configuration.GetSection(JwtOptions.SectionName));
+        services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 
         return services;
     }

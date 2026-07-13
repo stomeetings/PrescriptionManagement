@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Api\\Prescription.Api.csproj": {}
+    "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.API\\Prescription.Api.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Api\\Prescription.Api.csproj": {
+    "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.API\\Prescription.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Api\\Prescription.Api.csproj",
+        "projectUniqueName": "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.API\\Prescription.Api.csproj",
         "projectName": "Prescription.Api",
-        "projectPath": "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Api\\Prescription.Api.csproj",
+        "projectPath": "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.API\\Prescription.Api.csproj",
         "packagesPath": "C:\\Users\\92309\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.Api\\obj\\",
+        "outputPath": "C:\\Projects\\PrescriptionManagement\\backend\\Prescription.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\92309\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -53,6 +53,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -142,6 +148,10 @@
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
               "version": "[8.0.2, )"
             }
@@ -318,6 +328,14 @@
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.1.2, )"
             }
           },
           "imports": [
