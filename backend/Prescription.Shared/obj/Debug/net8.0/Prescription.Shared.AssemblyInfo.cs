@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Prescription.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+057de0c4c5422ddbf841491e7be8403fc927a53d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d7d9ebec551664a757a158a7f2c95e24c1f030b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Prescription.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Prescription.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

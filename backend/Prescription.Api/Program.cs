@@ -1,10 +1,12 @@
 using Prescription.Api.Extensions;
+using Prescription.Api.Middleware;
 using Prescription.Application;
 using Prescription.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddExceptionHandler<ApplicationExceptionHandler>();
 builder.Services.AddProblemDetails();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);

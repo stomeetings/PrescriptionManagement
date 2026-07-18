@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Prescription.Application.Mapping;
 using Prescription.Application.Services;
+using Prescription.Shared.Authorization;
 using Prescription.Shared.DTOs;
 
 namespace Prescription.Api.Controllers;
@@ -9,10 +10,11 @@ namespace Prescription.Api.Controllers;
 /// <summary>
 /// Provides read-only access to lookup reference data (dropdown/reference values) used across the application.
 /// </summary>
-// Requires any authenticated user, no role restriction: every role (Administrator, Doctor,
-// Pharmacist, Receptionist) needs reference/dropdown data to fill out forms in other modules.
+// Restricted to Administrators only (revised decision - originally any authenticated
+// role, since Doctor/Pharmacist/Receptionist will eventually need reference data for
+// their own forms too; that will need revisiting once those modules are built).
 [ApiController]
-[Authorize]
+[Authorize(Roles = Roles.SystemAdministrator)]
 [Route("api/lookups")]
 public class LookupsController : ControllerBase
 {
