@@ -1,0 +1,105 @@
+/* Layout-specific CSS only. Everything else in this app is plain Bootstrap 5 utility
+   classes - this file exists for the sidebar transitions below, plus the color-theme
+   overrides that follow. Retheming is done entirely through Bootstrap 5.3's own CSS
+   custom-property API (--bs-*), so every existing .btn-primary/.text-primary/
+   .bg-success-subtle/etc. class already used throughout the app picks up the new
+   palette automatically - no component file needed changes for this. */
+
+:root {
+  --bs-primary: #2563eb;
+  --bs-primary-rgb: 37, 99, 235;
+  --bs-primary-text-emphasis: #1d4ed8;
+  --bs-primary-bg-subtle: #e8f0fe;
+  --bs-primary-border-subtle: #b6d4fe;
+
+  --bs-success: #16a34a;
+  --bs-success-rgb: 22, 163, 74;
+  --bs-success-bg-subtle: #e7f8ed;
+  --bs-success-border-subtle: #bdeccb;
+
+  --bs-warning: #d97706;
+  --bs-warning-rgb: 217, 119, 6;
+  --bs-warning-bg-subtle: #fef3e2;
+  --bs-warning-border-subtle: #fbdba0;
+
+  --bs-info: #0ea5e9;
+  --bs-info-rgb: 14, 165, 233;
+  --bs-info-bg-subtle: #e5f6fd;
+  --bs-info-border-subtle: #b7e6fa;
+
+  --bs-body-bg: #f4f7fb;
+  --bs-body-color: #33415c;
+  --bs-border-color: #e2e8f0;
+}
+
+body {
+  background-color: var(--bs-body-bg);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #1d4ed8;
+  --bs-btn-hover-border-color: #1d4ed8;
+  --bs-btn-active-bg: #1d4ed8;
+  --bs-btn-active-border-color: #1d4ed8;
+  --bs-btn-disabled-bg: var(--bs-primary);
+  --bs-btn-disabled-border-color: var(--bs-primary);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary);
+  --bs-btn-active-bg: var(--bs-primary);
+  --bs-btn-active-border-color: var(--bs-primary);
+}
+
+.app-sidebar {
+  width: 240px;
+  transition: width 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.app-sidebar.app-sidebar-collapsed {
+  width: 72px;
+}
+
+.app-sidebar.app-sidebar-collapsed .nav-label,
+.app-sidebar.app-sidebar-collapsed .sidebar-brand-text {
+  display: none;
+}
+
+.app-sidebar-backdrop {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .app-sidebar {
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+    transform: translateX(-100%);
+    width: 240px !important;
+  }
+
+  .app-sidebar.app-sidebar-mobile-open {
+    transform: translateX(0);
+  }
+
+  .app-sidebar.app-sidebar-collapsed .nav-label,
+  .app-sidebar.app-sidebar-collapsed .sidebar-brand-text {
+    display: inline;
+  }
+
+  .app-sidebar-backdrop.app-sidebar-backdrop-visible {
+    display: block;
+    position: fixed;
+    inset: 56px 0 0 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1020;
+  }
+}
