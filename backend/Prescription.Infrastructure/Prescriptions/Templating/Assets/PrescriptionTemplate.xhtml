@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>Prescription {{PrescriptionNumber}}</title>
+    <style type="text/css">
+{{StyleSheet}}
+    </style>
+</head>
+<body>
+    <div class="prescription-document">
+
+        <div class="prescription-header">
+            <div class="clinic-block">
+                <div class="clinic-logo-placeholder">LOGO</div>
+                <div class="clinic-details">
+                    <div class="clinic-name">{{ClinicName}}</div>
+                    <div class="clinic-address">{{ClinicAddress}}</div>
+                    <div class="clinic-contact">Phone: {{ClinicPhone}} &#160;|&#160; Email: {{ClinicEmail}}</div>
+                </div>
+            </div>
+
+            <div class="provider-block">
+                <h2 class="section-title">Provider</h2>
+                <div class="field-row"><span class="field-label">Name:</span><span class="field-value">{{ProviderName}}</span></div>
+                <div class="field-row"><span class="field-label">NZMC Number:</span><span class="field-value">{{ProviderNzmcNumber}}</span></div>
+                <div class="field-row"><span class="field-label">Address:</span><span class="field-value">{{ProviderAddress}}</span></div>
+                <div class="field-row"><span class="field-label">Phone:</span><span class="field-value">{{ProviderPhone}}</span></div>
+                <div class="field-row"><span class="field-label">Email:</span><span class="field-value">{{ProviderEmail}}</span></div>
+            </div>
+        </div>
+
+        <div class="prescription-body">
+
+            <div class="info-columns">
+                <div class="patient-block">
+                    <h2 class="section-title">Patient</h2>
+                    <div class="field-row"><span class="field-label">Name:</span><span class="field-value">{{PatientName}}</span></div>
+                    <div class="field-row"><span class="field-label">NHI Number:</span><span class="field-value">{{PatientNhiNumber}}</span></div>
+                    <div class="field-row"><span class="field-label">Date of Birth:</span><span class="field-value">{{PatientDateOfBirth}}</span></div>
+                    <div class="field-row"><span class="field-label">Gender:</span><span class="field-value">{{PatientGender}}</span></div>
+                    <div class="field-row"><span class="field-label">Address:</span><span class="field-value">{{PatientAddress}}</span></div>
+                    <div class="field-row"><span class="field-label">Phone:</span><span class="field-value">{{PatientPhone}}</span></div>
+                </div>
+
+                <div class="prescription-info-block">
+                    <h2 class="section-title">Prescription</h2>
+                    <div class="field-row"><span class="field-label">Number:</span><span class="field-value">{{PrescriptionNumber}}</span></div>
+                    <div class="field-row"><span class="field-label">Issue Date:</span><span class="field-value">{{IssueDate}}</span></div>
+                    <div class="field-row"><span class="field-label">Expiry Date:</span><span class="field-value">{{ExpiryDate}}</span></div>
+                    <div class="field-row"><span class="field-label">Status:</span><span class="field-value">{{PrescriptionStatus}}</span></div>
+
+                    <div class="barcode-block">
+                        <div class="barcode-bars">{{BarcodeBars}}</div>
+                        <div class="barcode-caption">{{PrescriptionNumber}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title medication-table-title">Medications</h2>
+            <table class="medication-table">
+                <thead>
+                    <tr>
+                        <th class="col-medicine">Medicine</th>
+                        <th class="col-strength">Strength</th>
+                        <th class="col-dose">Dose</th>
+                        <th class="col-frequency">Frequency</th>
+                        <th class="col-route">Route</th>
+                        <th class="col-quantity">Quantity</th>
+                        <th class="col-directions">Directions</th>
+                    </tr>
+                </thead>
+                <tbody>
+<!-- MEDICATION_ROW_TEMPLATE_START -->
+                    <tr class="medication-row">
+                        <td class="col-medicine">{{Row.MedicineName}}</td>
+                        <td class="col-strength">{{Row.Strength}}</td>
+                        <td class="col-dose">{{Row.Dose}}</td>
+                        <td class="col-frequency">{{Row.Frequency}}</td>
+                        <td class="col-route">{{Row.Route}}</td>
+                        <td class="col-quantity">{{Row.Quantity}}</td>
+                        <td class="col-directions">{{Row.Directions}}</td>
+                    </tr>
+<!-- MEDICATION_ROW_TEMPLATE_END -->
+                </tbody>
+            </table>
+
+<!-- CLINICAL_NOTES_SECTION_START -->
+            <div class="clinical-notes-block">
+                <h2 class="section-title">Clinical Notes</h2>
+                <p class="clinical-notes-text">{{ClinicalNotes}}</p>
+            </div>
+<!-- CLINICAL_NOTES_SECTION_END -->
+
+            <div class="signature-block">
+                <div class="signature-placeholder">(Electronic Signature)</div>
+                <div class="signature-details">
+                    <div class="signature-doctor-name">{{DoctorName}}</div>
+                    <div class="signature-designation">{{DoctorDesignation}}</div>
+                    <div class="signature-date">{{SignatureDate}}</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="prescription-footer">
+            <div class="footer-confidential">Confidential Medical Document</div>
+            <div class="footer-generated">Generated by Prescription Management System</div>
+            <div class="footer-page-number"></div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -10,11 +10,15 @@ namespace Prescription.Api.Controllers;
 /// <summary>
 /// Provides read-only access to lookup reference data (dropdown/reference values) used across the application.
 /// </summary>
-// Restricted to Administrators only (revised decision - originally any authenticated
-// role, since Doctor/Pharmacist/Receptionist will eventually need reference data for
-// their own forms too; that will need revisiting once those modules are built).
+// Reopened to any authenticated role (reverting the earlier Administrator-only
+// restriction): Patient Management's View access includes Doctor/Receptionist/
+// Pharmacist, and they need Gender options for the Patient List's filter (and the
+// future Create/Edit Patient forms) - this is the "revisit once those modules are
+// built" moment that restriction's own comment predicted. The Lookup Management *UI*
+// (creating/editing lookup values) remains Administrator-only at the frontend route
+// level - only this read-only API is reopened.
 [ApiController]
-[Authorize(Roles = Roles.SystemAdministrator)]
+[Authorize]
 [Route("api/lookups")]
 public class LookupsController : ControllerBase
 {

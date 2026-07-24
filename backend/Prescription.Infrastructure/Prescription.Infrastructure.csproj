@@ -12,12 +12,31 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.1.2" />
+    <!-- Step 18.6: XHTML-to-PDF conversion. Drives real headless Chromium, so the PDF
+         is rendered by the exact same engine class as the browser preview/print (Step
+         18.2/18.3) - the only way to honor "must match the XHTML preview exactly" given
+         this project's CSS Paged Media features (Step 18.1). No prior PDF library choice
+         exists anywhere in this project or CLAUDE.md's technology stack - this is a new,
+         first-time decision, flagged here rather than silently picked. First run
+         downloads a Chromium binary via BrowserFetcher (~150-300MB) - the deployment
+         environment needs outbound internet access for that (or the binary
+         pre-provisioned), which is a new operational requirement this project didn't
+         previously have. -->
+    <PackageReference Include="PuppeteerSharp" Version="20.0.5" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Prescription.Domain\Prescription.Domain.csproj" />
     <ProjectReference Include="..\Prescription.Application\Prescription.Application.csproj" />
     <ProjectReference Include="..\Prescription.Shared\Prescription.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Read at runtime by PrescriptionHtmlGenerator via Assembly.GetManifestResourceStream
+         - embedding (rather than "Copy to Output Directory") avoids any dependency on the
+         deployed app's working directory/file-system layout. -->
+    <EmbeddedResource Include="Prescriptions\Templating\Assets\PrescriptionTemplate.xhtml" />
+    <EmbeddedResource Include="Prescriptions\Templating\Assets\PrescriptionStyle.css" />
   </ItemGroup>
 
 </Project>

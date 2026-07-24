@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const PAGE_SIZE = 5;
 
@@ -10,10 +11,13 @@ const COLUMNS = [
   { key: 'status', label: 'Status' },
 ];
 
-// Mock data only - Actions are intentionally inert (no Patient Management module
-// exists yet). Search/sort/pagination all run client-side over the mock array; a real
-// implementation would likely push these to query params against a real API instead.
-function PatientSummaryTable({ patients }) {
+// Real recent-patients data now (DashboardPage fetches the latest patients and maps
+// them into this shape - patientId is the display PatientNumber string, id is the real
+// numeric PatientId the View/Edit actions route with). Search/sort/pagination stay
+// client-side over whatever page of patients was fetched - this is a dashboard widget
+// showing the most recent patients, not a replacement for the full Patient List/Search
+// page.
+function PatientSummaryTable({ patients, isLoading, error, onRetry }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortKey, setSortKey] = useState('patientId');
   const [sortDirection, setSortDirection] = useState('asc');
@@ -27,7 +31,7 @@ function PatientSummaryTable({ patients }) {
 
     return patients.filter((patient) =>
       [patient.patientId, patient.fullName, patient.phone].some((field) =>
-        field.toLowerCase().includes(term),
+        String(field || '').toLowerCase().includes(term),
       ),
     );
   }, [patients, searchTerm]);
@@ -80,6 +84,29 @@ function PatientSummaryTable({ patients }) {
         </div>
       </div>
 
+      {error && (
+        <div className="card-body">
+          <div className="alert alert-danger d-flex justify-content-between align-items-center mb-0" role="alert">
+            <span>{error}</span>
+            {onRetry && (
+              <button type="button" className="btn btn-sm btn-outline-danger" onClick={onRetry}>
+                <i className="bi bi-arrow-clockwise me-1" aria-hidden="true" />
+                Retry
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+
+      {!error && isLoading && (
+        <div className="card-body text-center py-4">
+          <span className="spinner-border spinner-border-sm me-2" aria-hidden="true" />
+          Loading recent patients…
+        </div>
+      )}
+
+      {!error && !isLoading && (
+      <>
       <div className="table-responsive">
         <table className="table table-hover align-middle mb-0">
           <thead className="table-light">
@@ -126,22 +153,12 @@ function PatientSummaryTable({ patients }) {
                   </span>
                 </td>
                 <td>
-                  <button
-                    type="button"
-                    className="btn btn-sm btn-outline-secondary me-1"
-                    disabled
-                    title="Patient Management is not yet implemented"
-                  >
+                  <Link to={`/patients/${patient.id}`} className="btn btn-sm btn-outline-secondary me-1" title="View Patient">
                     <i className="bi bi-eye" aria-hidden="true" />
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-sm btn-outline-secondary"
-                    disabled
-                    title="Patient Management is not yet implemented"
-                  >
+                  </Link>
+                  <Link to={`/patients/${patient.id}/edit`} className="btn btn-sm btn-outline-secondary" title="Edit Patient">
                     <i className="bi bi-pencil" aria-hidden="true" />
-                  </button>
+                  </Link>
                 </td>
               </tr>
             ))}
@@ -177,6 +194,8 @@ function PatientSummaryTable({ patients }) {
           </ul>
         </nav>
       </div>
+      </>
+      )}
     </div>
   );
 }

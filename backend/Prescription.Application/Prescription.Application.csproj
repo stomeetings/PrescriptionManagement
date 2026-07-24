@@ -8,6 +8,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.2" />
+    <!-- Step 18.6: IMemoryCache, for PrescriptionPdfService's "cache generated PDF
+         until the draft changes" requirement. -->
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>

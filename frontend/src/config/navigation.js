@@ -6,7 +6,6 @@ export const NAVIGATION = [
   { label: 'Patients', path: '/patients', icon: 'bi-people' },
   { label: 'Prescriptions', path: '/prescriptions', icon: 'bi-file-earmark-medical' },
   { label: 'Medicines', path: '/medicines', icon: 'bi-capsule' },
-  { label: 'Lookup Management', path: '/lookup-management', icon: 'bi-list-check', adminOnly: true },
   { label: 'User Management', path: '/user-management', icon: 'bi-person-gear', adminOnly: true },
   { label: 'Reports', path: '/reports', icon: 'bi-bar-chart-line' },
   { label: 'Settings', path: '/settings', icon: 'bi-gear', adminOnly: true },

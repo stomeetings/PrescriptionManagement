@@ -147,6 +147,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[8.0.2, )"
@@ -332,6 +336,10 @@
             "Microsoft.Extensions.Options.ConfigurationExtensions": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "PuppeteerSharp": {
+              "target": "Package",
+              "version": "[20.0.5, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

@@ -17,7 +17,7 @@ function ConfirmDialog({ show, title, message, confirmLabel = 'Confirm', confirm
               <button type="button" className="btn-close" onClick={onCancel} disabled={isProcessing} aria-label="Close" />
             </div>
             <div className="modal-body">
-              <p className="mb-0">{message}</p>
+              <div>{message}</div>
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-outline-secondary" onClick={onCancel} disabled={isProcessing}>
